@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="440" viewBox="0 0 720 440" font-family="Menlo, Consolas, monospace" font-size="14">
+  <rect width="720" height="440" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="360" y="27" fill="#8b949e" text-anchor="middle" font-size="12">portberth — stable ports per project, conflicts explained</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="62"><tspan fill="#7ee787">$</tspan> portberth claim shop/web --note "storefront dev server"</text>
+    <text x="24" y="84">reserved <tspan fill="#79c0ff">shop/web</tspan> -&gt; <tspan fill="#d2a8ff">3708</tspan></text>
+    <text x="24" y="118"><tspan fill="#7ee787">$</tspan> portberth claim otherapp --port 3708</text>
+    <text x="24" y="140"><tspan fill="#f778ba">claim: port 3708 is not available for otherapp</tspan></text>
+    <text x="24" y="162">  reserved by <tspan fill="#79c0ff">shop/web</tspan> since 2026-07-13</text>
+    <text x="24" y="184" fill="#8b949e">hint: `portberth explain 3708` shows full provenance; omit --port to auto-assign</text>
+    <text x="24" y="218"><tspan fill="#7ee787">$</tspan> portberth explain 3708</text>
+    <text x="24" y="240">port <tspan fill="#d2a8ff">3708</tspan></text>
+    <text x="24" y="264">  registry    reserved by <tspan fill="#79c0ff">shop/web</tspan> since 2026-07-13 (note: storefront dev server)</text>
+    <text x="24" y="286">  well-known  no</text>
+    <text x="24" y="308">  live        <tspan fill="#ffa657">LISTENING on 127.0.0.1 by pid 21304 (python3)</tspan></text>
+    <text x="24" y="332">verdict: <tspan fill="#f778ba">reserved and in use</tspan></text>
+    <text x="24" y="366"><tspan fill="#7ee787">$</tspan> portberth doctor</text>
+    <text x="24" y="388">  <tspan fill="#ffa657">shop/web port 3708 is in use by pid 21304 (python3) on 127.0.0.1</tspan></text>
+    <text x="24" y="410">doctor: <tspan fill="#7ee787">OK</tspan> — 0 errors, 1 warning</text>
+  </g>
+</svg>

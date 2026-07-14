@@ -1,0 +1,16 @@
+# Example .envrc for direnv users: put this in a project directory and
+# every shell that enters it gets the project's stable ports as
+# environment variables — the same values on every machine.
+#
+#   cp examples/envrc.example .envrc && direnv allow
+#
+# `claim` is idempotent, so running it on every `cd` is free after the
+# first time; `env --export` then loads SHOP_WEB_PORT, SHOP_API_PORT, …
+
+portberth claim shop/web >/dev/null
+portberth claim shop/api >/dev/null
+eval "$(portberth env shop --export)"
+
+# Now dev servers can rely on the variables:
+#   npx vite --port "$SHOP_WEB_PORT"
+#   uvicorn app:api --port "$SHOP_API_PORT"
